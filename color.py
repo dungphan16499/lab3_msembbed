@@ -30,12 +30,13 @@ def gstreamer_pipeline(
     )
 
 def process(frame, frame2, frame3):
+    black = (255,255,255)
     #create  rect in screen's centre
     rect_size = 100
     width, height, channels = frame.shape
     start_point = (int(height/2 - rect_size/2), int(width/2 - rect_size/2))
     end_point = (int(height/2 + rect_size/2), int(width/2 + rect_size/2))
-    color = (255, 0, 0)
+    color = (255, 255, 0)
     thickness = 2
     rect = cv2.rectangle(frame, start_point, end_point, color, thickness)
     h_sensivity = 20
@@ -43,7 +44,7 @@ def process(frame, frame2, frame3):
     width2, height2, channels2 = frame2.shape
     start_point2 = (int(height/1.3 - rect_size/2), int(width/1.3 - rect_size/2))
     end_point2 = (int(height/1.3 + rect_size/2), int(width/1.3 + rect_size/2))
-    color = (0, 255, 0)
+    color = (255, 255, 0)
     #thickness = 2
     rect2 = cv2.rectangle(frame2, start_point2, end_point2, color, thickness)
     
@@ -51,7 +52,7 @@ def process(frame, frame2, frame3):
     width3, height3, channels = frame.shape
     start_point3 = (int(height/3.4 - rect_size/2), int(width/3.4 - rect_size/2))
     end_point3 = (int(height/3.4 + rect_size/2), int(width/3.4 + rect_size/2))
-    color = (0, 0, 255)
+    color = (255, 255, 0)
     #thickness = 2
     rect3 = cv2.rectangle(frame3, start_point3, end_point3, color, thickness)
     
@@ -153,53 +154,53 @@ def process(frame, frame2, frame3):
     fontScale = 0.7
 	
     if green_rate > 0.9:
-        text = cv2.putText(rect, ' green ', org, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect, ' green ', org, font, fontScale, black, thickness, cv2.LINE_AA)
     elif green_rate2 > 0.9:
-        text = cv2.putText(rect2, ' green ', org2, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect2, ' green ', org2, font, fontScale, black, thickness, cv2.LINE_AA)
     elif green_rate3 > 0.9:
-        text = cv2.putText(rect3, ' green ', org3, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect3, ' green ', org3, font, fontScale, black, thickness, cv2.LINE_AA)
         
     if red_rate > 0.9:
-        text = cv2.putText(rect, ' red ', org, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect, ' red ', org, font, fontScale, black, thickness, cv2.LINE_AA)
     elif red_rate2 > 0.9:
-        text = cv2.putText(rect2, ' red ', org2, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect2, ' red ', org2, font, fontScale, black, thickness, cv2.LINE_AA)
     elif red_rate3 > 0.9:
-        text = cv2.putText(rect3, ' red ', org3, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect3, ' red ', org3, font, fontScale, black, thickness, cv2.LINE_AA)
     
     if blue_rate > 0.9:
-        text = cv2.putText(rect2, ' blue ', org, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect2, ' blue ', org, font, fontScale, black, thickness, cv2.LINE_AA)
     elif blue_rate2 > 0.9:
-        text = cv2.putText(rect, ' blue ', org2, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect, ' blue ', org2, font, fontScale, black, thickness, cv2.LINE_AA)
     elif blue_rate3 > 0.9:
-        text = cv2.putText(rect3, ' blue ', org3, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect3, ' blue ', org3, font, fontScale, black, thickness, cv2.LINE_AA)
     
     if yellow_rate > 0.9:
-        text = cv2.putText(rect, ' yellow ', org, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect, ' yellow ', org, font, fontScale, black, thickness, cv2.LINE_AA)
     elif yellow_rate2 > 0.9:
-        text = cv2.putText(rect2, ' yellow ', org2, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect2, ' yellow ', org2, font, fontScale, black, thickness, cv2.LINE_AA)
     elif yellow_rate3 > 0.9:
-        text = cv2.putText(rect3, ' yellow ', org3, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect3, ' yellow ', org3, font, fontScale, black, thickness, cv2.LINE_AA)
     
     if orange_rate > 0.9:
-        text = cv2.putText(rect, ' orange ', org, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect, ' orange ', org, font, fontScale, black, thickness, cv2.LINE_AA)
     elif orange_rate2 > 0.9:
-        text = cv2.putText(rect2, ' orange ', org2, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect2, ' orange ', org2, font, fontScale, black, thickness, cv2.LINE_AA)
     elif orange_rate3 > 0.9:
-        text = cv2.putText(rect3, ' orange ', org3, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect3, ' orange ', org3, font, fontScale, black, thickness, cv2.LINE_AA)
     
     if purple_rate > 0.9:
-        text = cv2.putText(rect, ' purple ', org, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect, ' purple ', org, font, fontScale, black, thickness, cv2.LINE_AA)
     elif purple_rate2 > 0.9:
-        text = cv2.putText(rect2, ' purple ', org2, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect2, ' purple ', org2, font, fontScale, black, thickness, cv2.LINE_AA)
     elif purple_rate3 > 0.9:
-        text = cv2.putText(rect3, ' purple ', org3, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect3, ' purple ', org3, font, fontScale, black, thickness, cv2.LINE_AA)
     
     if sky_rate > 0.9:
-        text = cv2.putText(rect, ' sky_blue ', org, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect, ' sky_blue ', org, font, fontScale, black, thickness, cv2.LINE_AA)
     elif sky_rate2 > 0.9:
-        text = cv2.putText(rect2, ' sky_blue ', org2, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect2, ' sky_blue ', org2, font, fontScale, black, thickness, cv2.LINE_AA)
     elif sky_rate3 > 0.9:
-        text = cv2.putText(rect3, ' sky_blue ', org3, font, fontScale, color, thickness, cv2.LINE_AA)
+        text = cv2.putText(rect3, ' sky_blue ', org3, font, fontScale, black, thickness, cv2.LINE_AA)
 
     av_hue = np.average(mask_frame[:,:,0])
     av_sat = np.average(mask_frame[:,:,1])
@@ -246,7 +247,7 @@ while(cap.isOpened()):
     
     # Exit if "4" is pressed  
     k = cv2.waitKey(1) & 0xFF
-    if k == 97 : #ord 4
+    if k == 97 :
         cnt = cnt -1
         cnt = cnt % 3
     elif k == 100:
