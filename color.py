@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
-
+import tkinter as tk
+ 
 def gstreamer_pipeline(
     capture_width=1280,
     capture_height=720,
@@ -214,9 +215,6 @@ def process(frame, frame2, frame3):
     return frame2
 
 
-
-
-
 print('Press 4 to Quit the Application\n')
 
 #Open Default Camera
@@ -230,8 +228,7 @@ while(cap.isOpened()):
     ret, frame = cap.read()
     ret, frame3 = cap.read()
     
-    
-    
+
     #Flip Video vertically (180 Degrees)
     frame2 = cv2.flip(frame2, 180)
     frame = cv2.flip(frame, 180)
