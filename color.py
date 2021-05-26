@@ -245,7 +245,7 @@ while(cap.isOpened()):
     elif cnt == 0:
         cv2.imshow('Cam', frame3)
     
-    # Exit if "4" is pressed  
+    
     k = cv2.waitKey(1) & 0xFF
     if k == 97 :
         cnt = cnt -1
@@ -253,6 +253,7 @@ while(cap.isOpened()):
     elif k == 100:
         cnt = cnt+1
         cnt = cnt % 3
+    # Exit if "4" is pressed  
     if k == 52:
         #Quit
         print ('Good Bye!')
